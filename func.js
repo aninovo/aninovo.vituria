@@ -21,7 +21,10 @@ function LVFormDictionary(stringDict){
 	outp = {};
 	for (var k in stringDict){
 		var LV = LVPrepare(k); // conv the key from str to LV
-		outp[LV] = stringDict[k]; // copy the description
+		if(LV in outp) 
+			outp[LV] += " \/\/ " + stringDict[k]; // copy the description
+		else
+			outp[LV] = stringDict[k]; // copy the description
 	}
 	return outp;
 }
@@ -78,3 +81,4 @@ function strRemoveMorpheme(stem, morph){
 	}
 	return stem;
 }
+

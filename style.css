@@ -5,7 +5,7 @@ body {
   );
   height: 100vh;
   margin: 0;
-  overflow: hidden;
+  overflow-x: hidden;
   padding: 2rem;
   color: white;
   font: 1.3rem Inconsolata, monospace;

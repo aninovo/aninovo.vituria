@@ -18,12 +18,17 @@
     Look up
 </button>
 <div id="results_div"></div>
+<button id="wordlist_button" type="button">
+    Show me all the words
+</button>
   </body>
 
 <script>
 var search_button = document.getElementById('search_button');
 var results_div = document.getElementById('results_div');
 var search_textbox = document.getElementById('search_textbox');
+var wordlist_button = document.getElementById('wordlist_button');
+
 search_button.addEventListener("click", function(e) {
 	results_div.innerHTML = "";
 	var word = search_textbox.value;
@@ -43,6 +48,14 @@ search_button.addEventListener("click", function(e) {
 	if(output != "") results_div.innerHTML = output;
 	else results_div.innerHTML = "=(";
 }, false);
+
+wordlist_button.addEventListener("click", function(e) {
+	results_div.innerHTML = "";
+	for(k in termdict){
+		results_div.innerHTML += k +" : <B>"+termdict[k] + "</B><br>";
+	}
+}, false);
+
 </script>
 
 </html>
