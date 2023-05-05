@@ -9,7 +9,7 @@ body {
   padding: 2rem;
   color: white;
   font: 1.3rem Inconsolata, monospace;
-  text-shadow: 0 0 5px #C8C8C8;
+  text-shadow: 0 0 3px #C8C8C8;
   &::after {
     content: "";
     position: absolute;
@@ -49,4 +49,8 @@ button {
   border-color : rgba(100, 100, 100, 0.75); 
     color: white;
   font: 1.3rem Inconsolata, monospace;
+}
+
+a {
+color: white;
 }
