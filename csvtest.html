@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script src="https://code.jquery.com/jquery-3.7.0.min.js"></script>
+<script src="jquery.csv.min.js"></script>
+
+</head>
+
+<body>
+<script >
+
+function parsedata (data){
+//TODO parsing
+alert(data);
+}
+// start opening csv
+
+//fname = "http://docs.google.com/spreadsheets/d/e/2PACX-1vSCBO6FbA99yUZgUINI80ISmwkCX4sr-l7iAcIyOHYYyu1Y6S9QdqE_fSuXehpEOCtFgIkTpEOKtqPV/pub?gid=1955991571&single=true&output=csv"
+
+fname = "https://docs.google.com/spreadsheets/d/e/2PACX-1vSGCRUv8z5VSCk7lBy_4gtH2PkFvMH5ny65qauUmYzqWinGEw23IAQT_1seyBGfqw/pub?output=csv";
+
+//fname = "http://test.csv"
+
+//var spreadsheetID = "somevalue";
+//var url = "https://spreadsheets.google.com/feeds/list/" + spreadsheetID + "/1/public/values?alt=json";
+/*
+$.getJSON(fname, function(data) {                  
+    var entry = data.feed.entry;              
+    $(entry).each(function(){
+      alert(this.gsx$propertyid.$t); //or whatever action of using the value
+    });                 
+});
+*/
+
+$.get(fname, parsedata)
+.fail(function( jqXHR, textStatus, errorThrown ) {
+        console.log(jqXHR);
+        console.log(textStatus);
+        console.log(errorThrown );
+    });
+
+</script>
+</body>
